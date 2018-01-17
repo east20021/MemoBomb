@@ -12,6 +12,8 @@
 		9B508370200FC11D00466450 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B50836E200FC11D00466450 /* Main.storyboard */; };
 		9B508372200FC11D00466450 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B508371200FC11D00466450 /* Assets.xcassets */; };
 		9B508375200FC11D00466450 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B508373200FC11D00466450 /* LaunchScreen.storyboard */; };
+		9B50837F200FCB9000466450 /* BlackTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B50837E200FCB9000466450 /* BlackTableViewCell.swift */; };
+		9B508381200FCB9600466450 /* WhiteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B508380200FCB9600466450 /* WhiteTableViewCell.swift */; };
 		F618CE55F35EDE27444D7399 /* Pods_MemoBomb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9D22EC087F16912EB5E6B35 /* Pods_MemoBomb.framework */; };
 /* End PBXBuildFile section */
 
@@ -24,6 +26,8 @@
 		9B508371200FC11D00466450 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9B508374200FC11D00466450 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9B508376200FC11D00466450 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9B50837E200FCB9000466450 /* BlackTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackTableViewCell.swift; sourceTree = "<group>"; };
+		9B508380200FCB9600466450 /* WhiteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiteTableViewCell.swift; sourceTree = "<group>"; };
 		CD5888EA56256B47C82DCF4B /* Pods-MemoBomb.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemoBomb.release.xcconfig"; path = "Pods/Target Support Files/Pods-MemoBomb/Pods-MemoBomb.release.xcconfig"; sourceTree = "<group>"; };
 		D9D22EC087F16912EB5E6B35 /* Pods_MemoBomb.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MemoBomb.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -84,6 +88,8 @@
 				9B508371200FC11D00466450 /* Assets.xcassets */,
 				9B508373200FC11D00466450 /* LaunchScreen.storyboard */,
 				9B508376200FC11D00466450 /* Info.plist */,
+				9B50837E200FCB9000466450 /* BlackTableViewCell.swift */,
+				9B508380200FCB9600466450 /* WhiteTableViewCell.swift */,
 			);
 			path = MemoBomb;
 			sourceTree = "<group>";
@@ -220,7 +226,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B50836D200FC11D00466450 /* ViewController.swift in Sources */,
+				9B50837F200FCB9000466450 /* BlackTableViewCell.swift in Sources */,
 				9B50836B200FC11D00466450 /* AppDelegate.swift in Sources */,
+				9B508381200FCB9600466450 /* WhiteTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
