@@ -7,59 +7,83 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9B50834D200FBD0700466450 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B50834C200FBD0700466450 /* AppDelegate.swift */; };
-		9B50834F200FBD0700466450 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B50834E200FBD0700466450 /* ViewController.swift */; };
-		9B508352200FBD0700466450 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B508350200FBD0700466450 /* Main.storyboard */; };
-		9B508354200FBD0700466450 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B508353200FBD0700466450 /* Assets.xcassets */; };
-		9B508357200FBD0700466450 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B508355200FBD0700466450 /* LaunchScreen.storyboard */; };
+		9B50836B200FC11D00466450 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B50836A200FC11D00466450 /* AppDelegate.swift */; };
+		9B50836D200FC11D00466450 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B50836C200FC11D00466450 /* ViewController.swift */; };
+		9B508370200FC11D00466450 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B50836E200FC11D00466450 /* Main.storyboard */; };
+		9B508372200FC11D00466450 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B508371200FC11D00466450 /* Assets.xcassets */; };
+		9B508375200FC11D00466450 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B508373200FC11D00466450 /* LaunchScreen.storyboard */; };
+		F618CE55F35EDE27444D7399 /* Pods_MemoBomb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9D22EC087F16912EB5E6B35 /* Pods_MemoBomb.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		9B508349200FBD0700466450 /* MemoBomb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemoBomb.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		9B50834C200FBD0700466450 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9B50834E200FBD0700466450 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		9B508351200FBD0700466450 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		9B508353200FBD0700466450 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		9B508356200FBD0700466450 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		9B508358200FBD0700466450 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		48B26E958959741D196FC2A1 /* Pods-MemoBomb.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemoBomb.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MemoBomb/Pods-MemoBomb.debug.xcconfig"; sourceTree = "<group>"; };
+		9B508367200FC11D00466450 /* MemoBomb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemoBomb.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B50836A200FC11D00466450 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9B50836C200FC11D00466450 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9B50836F200FC11D00466450 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9B508371200FC11D00466450 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9B508374200FC11D00466450 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9B508376200FC11D00466450 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CD5888EA56256B47C82DCF4B /* Pods-MemoBomb.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemoBomb.release.xcconfig"; path = "Pods/Target Support Files/Pods-MemoBomb/Pods-MemoBomb.release.xcconfig"; sourceTree = "<group>"; };
+		D9D22EC087F16912EB5E6B35 /* Pods_MemoBomb.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MemoBomb.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		9B508346200FBD0700466450 /* Frameworks */ = {
+		9B508364200FC11D00466450 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F618CE55F35EDE27444D7399 /* Pods_MemoBomb.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		9B508340200FBD0700466450 = {
+		0C3EC98CD352C9F892F018FE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				9B50834B200FBD0700466450 /* MemoBomb */,
-				9B50834A200FBD0700466450 /* Products */,
+				D9D22EC087F16912EB5E6B35 /* Pods_MemoBomb.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		541CEA45AF03436FB6D9313E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				48B26E958959741D196FC2A1 /* Pods-MemoBomb.debug.xcconfig */,
+				CD5888EA56256B47C82DCF4B /* Pods-MemoBomb.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		9B50835E200FC11D00466450 = {
+			isa = PBXGroup;
+			children = (
+				9B508369200FC11D00466450 /* MemoBomb */,
+				9B508368200FC11D00466450 /* Products */,
+				541CEA45AF03436FB6D9313E /* Pods */,
+				0C3EC98CD352C9F892F018FE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		9B50834A200FBD0700466450 /* Products */ = {
+		9B508368200FC11D00466450 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9B508349200FBD0700466450 /* MemoBomb.app */,
+				9B508367200FC11D00466450 /* MemoBomb.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		9B50834B200FBD0700466450 /* MemoBomb */ = {
+		9B508369200FC11D00466450 /* MemoBomb */ = {
 			isa = PBXGroup;
 			children = (
-				9B50834C200FBD0700466450 /* AppDelegate.swift */,
-				9B50834E200FBD0700466450 /* ViewController.swift */,
-				9B508350200FBD0700466450 /* Main.storyboard */,
-				9B508353200FBD0700466450 /* Assets.xcassets */,
-				9B508355200FBD0700466450 /* LaunchScreen.storyboard */,
-				9B508358200FBD0700466450 /* Info.plist */,
+				9B50836A200FC11D00466450 /* AppDelegate.swift */,
+				9B50836C200FC11D00466450 /* ViewController.swift */,
+				9B50836E200FC11D00466450 /* Main.storyboard */,
+				9B508371200FC11D00466450 /* Assets.xcassets */,
+				9B508373200FC11D00466450 /* LaunchScreen.storyboard */,
+				9B508376200FC11D00466450 /* Info.plist */,
 			);
 			path = MemoBomb;
 			sourceTree = "<group>";
@@ -67,13 +91,16 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		9B508348200FBD0700466450 /* MemoBomb */ = {
+		9B508366200FC11D00466450 /* MemoBomb */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9B50835B200FBD0700466450 /* Build configuration list for PBXNativeTarget "MemoBomb" */;
+			buildConfigurationList = 9B508379200FC11D00466450 /* Build configuration list for PBXNativeTarget "MemoBomb" */;
 			buildPhases = (
-				9B508345200FBD0700466450 /* Sources */,
-				9B508346200FBD0700466450 /* Frameworks */,
-				9B508347200FBD0700466450 /* Resources */,
+				A8532165745D9A1469013E29 /* [CP] Check Pods Manifest.lock */,
+				9B508363200FC11D00466450 /* Sources */,
+				9B508364200FC11D00466450 /* Frameworks */,
+				9B508365200FC11D00466450 /* Resources */,
+				8831790D0EDE3DB0F01D2F6A /* [CP] Embed Pods Frameworks */,
+				61FB97B94C37A3A59D314C2B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -81,26 +108,26 @@
 			);
 			name = MemoBomb;
 			productName = MemoBomb;
-			productReference = 9B508349200FBD0700466450 /* MemoBomb.app */;
+			productReference = 9B508367200FC11D00466450 /* MemoBomb.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		9B508341200FBD0700466450 /* Project object */ = {
+		9B50835F200FC11D00466450 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
 				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = smith;
 				TargetAttributes = {
-					9B508348200FBD0700466450 = {
+					9B508366200FC11D00466450 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
 					};
 				};
 			};
-			buildConfigurationList = 9B508344200FBD0700466450 /* Build configuration list for PBXProject "MemoBomb" */;
+			buildConfigurationList = 9B508362200FC11D00466450 /* Build configuration list for PBXProject "MemoBomb" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -108,54 +135,110 @@
 				en,
 				Base,
 			);
-			mainGroup = 9B508340200FBD0700466450;
-			productRefGroup = 9B50834A200FBD0700466450 /* Products */;
+			mainGroup = 9B50835E200FC11D00466450;
+			productRefGroup = 9B508368200FC11D00466450 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9B508348200FBD0700466450 /* MemoBomb */,
+				9B508366200FC11D00466450 /* MemoBomb */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		9B508347200FBD0700466450 /* Resources */ = {
+		9B508365200FC11D00466450 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9B508357200FBD0700466450 /* LaunchScreen.storyboard in Resources */,
-				9B508354200FBD0700466450 /* Assets.xcassets in Resources */,
-				9B508352200FBD0700466450 /* Main.storyboard in Resources */,
+				9B508375200FC11D00466450 /* LaunchScreen.storyboard in Resources */,
+				9B508372200FC11D00466450 /* Assets.xcassets in Resources */,
+				9B508370200FC11D00466450 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		61FB97B94C37A3A59D314C2B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MemoBomb/Pods-MemoBomb-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8831790D0EDE3DB0F01D2F6A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-MemoBomb/Pods-MemoBomb-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MemoBomb/Pods-MemoBomb-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A8532165745D9A1469013E29 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MemoBomb-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
-		9B508345200FBD0700466450 /* Sources */ = {
+		9B508363200FC11D00466450 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9B50834F200FBD0700466450 /* ViewController.swift in Sources */,
-				9B50834D200FBD0700466450 /* AppDelegate.swift in Sources */,
+				9B50836D200FC11D00466450 /* ViewController.swift in Sources */,
+				9B50836B200FC11D00466450 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		9B508350200FBD0700466450 /* Main.storyboard */ = {
+		9B50836E200FC11D00466450 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				9B508351200FBD0700466450 /* Base */,
+				9B50836F200FC11D00466450 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		9B508355200FBD0700466450 /* LaunchScreen.storyboard */ = {
+		9B508373200FC11D00466450 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				9B508356200FBD0700466450 /* Base */,
+				9B508374200FC11D00466450 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -163,7 +246,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		9B508359200FBD0700466450 /* Debug */ = {
+		9B508377200FC11D00466450 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -220,7 +303,7 @@
 			};
 			name = Debug;
 		};
-		9B50835A200FBD0700466450 /* Release */ = {
+		9B508378200FC11D00466450 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -270,8 +353,9 @@
 			};
 			name = Release;
 		};
-		9B50835C200FBD0700466450 /* Debug */ = {
+		9B50837A200FC11D00466450 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 48B26E958959741D196FC2A1 /* Pods-MemoBomb.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -285,8 +369,9 @@
 			};
 			name = Debug;
 		};
-		9B50835D200FBD0700466450 /* Release */ = {
+		9B50837B200FC11D00466450 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CD5888EA56256B47C82DCF4B /* Pods-MemoBomb.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -303,25 +388,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9B508344200FBD0700466450 /* Build configuration list for PBXProject "MemoBomb" */ = {
+		9B508362200FC11D00466450 /* Build configuration list for PBXProject "MemoBomb" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9B508359200FBD0700466450 /* Debug */,
-				9B50835A200FBD0700466450 /* Release */,
+				9B508377200FC11D00466450 /* Debug */,
+				9B508378200FC11D00466450 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9B50835B200FBD0700466450 /* Build configuration list for PBXNativeTarget "MemoBomb" */ = {
+		9B508379200FC11D00466450 /* Build configuration list for PBXNativeTarget "MemoBomb" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9B50835C200FBD0700466450 /* Debug */,
-				9B50835D200FBD0700466450 /* Release */,
+				9B50837A200FC11D00466450 /* Debug */,
+				9B50837B200FC11D00466450 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 9B508341200FBD0700466450 /* Project object */;
+	rootObject = 9B50835F200FC11D00466450 /* Project object */;
 }
