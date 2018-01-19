@@ -10,6 +10,7 @@
 		9B4AE60E2011E77100E94BA6 /* Memo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B4AE60C2011E77100E94BA6 /* Memo.storyboard */; };
 		9B4AE6102011F19100E94BA6 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4AE60F2011F19100E94BA6 /* EditViewController.swift */; };
 		9B4AE616201205EB00E94BA6 /* MemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4AE615201205EB00E94BA6 /* MemoViewController.swift */; };
+		9B4AE61B2012878C00E94BA6 /* MemoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4AE61A2012878C00E94BA6 /* MemoManager.swift */; };
 		9B50836B200FC11D00466450 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B50836A200FC11D00466450 /* AppDelegate.swift */; };
 		9B50836D200FC11D00466450 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B50836C200FC11D00466450 /* ViewController.swift */; };
 		9B508370200FC11D00466450 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B50836E200FC11D00466450 /* Main.storyboard */; };
@@ -25,6 +26,7 @@
 		9B4AE60C2011E77100E94BA6 /* Memo.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Memo.storyboard; sourceTree = "<group>"; };
 		9B4AE60F2011F19100E94BA6 /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 		9B4AE615201205EB00E94BA6 /* MemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoViewController.swift; sourceTree = "<group>"; };
+		9B4AE61A2012878C00E94BA6 /* MemoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoManager.swift; sourceTree = "<group>"; };
 		9B508367200FC11D00466450 /* MemoBomb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemoBomb.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B50836A200FC11D00466450 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9B50836C200FC11D00466450 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				9B5083D4200FE18000466450 /* Memo.swift */,
+				9B4AE61A2012878C00E94BA6 /* MemoManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -269,6 +272,7 @@
 			files = (
 				9B4AE616201205EB00E94BA6 /* MemoViewController.swift in Sources */,
 				9B50836D200FC11D00466450 /* ViewController.swift in Sources */,
+				9B4AE61B2012878C00E94BA6 /* MemoManager.swift in Sources */,
 				9B50836B200FC11D00466450 /* AppDelegate.swift in Sources */,
 				9B508381200FCB9600466450 /* WhiteTableViewCell.swift in Sources */,
 				9B5083D5200FE18000466450 /* Memo.swift in Sources */,

@@ -10,13 +10,15 @@ import UIKit
 
 class EditViewController: UIViewController {
     
-    var memoData = [String: String]()
-
     @IBOutlet weak var contentsView: UITextView!
+    var text = ""
+    let memoManager = MemoManager()
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        contentsView.text = text
         
-        contentsView.text = memoData["contents"]
+        
     }
     
     @IBAction func backButton(_ sender: Any) {
