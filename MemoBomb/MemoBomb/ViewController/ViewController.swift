@@ -32,7 +32,9 @@ class ViewController: UIViewController {
             print("\(error)")
         }
         
-        contentsList = realm.objects(Memo.self)
+        contentsList = memoManager.getMemo(type: Memo.self)
+        
+        
         
         token = contentsList.observe { notification in
             self.memoTableView.reloadData()
@@ -41,23 +43,13 @@ class ViewController: UIViewController {
         if contentsList.count == 0 {
             let memo = Memo()
             memo.text = "welcome to MemoBomb"
+            memo.id = "0"
             memoManager.save(objs: memo)
         }
         
         
         print(NSHomeDirectory())
         
-    }
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(true)
-    }
-    
-    
-
-    @IBAction func addButton(_ sender: Any) {
-        let memoVC: MemoViewController = UIStoryboard(name: "Memo", bundle: nil).instantiateViewController(withIdentifier: "memoVC") as! MemoViewController
-        
-        self.present(memoVC, animated: true) { }
     }
     
 
@@ -69,7 +61,6 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        
         let whiteCell = tableView.dequeueReusableCell(withIdentifier: "whiteCell", for: indexPath) as! WhiteTableViewCell
         whiteCell.textLabel?.text = contentsList[indexPath.row].text
         return whiteCell
@@ -79,8 +70,16 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         return 120
     }
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            memoManager.deleteSwipe(memo: contentsList[indexPath.row])
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowDetail" {
+            (segue.destination as! EditViewController).id = contentsList[(self.memoTableView.indexPathForSelectedRow)!.row].id
             (segue.destination as! EditViewController).text = contentsList[(self.memoTableView.indexPathForSelectedRow)!.row].text
         }
     }

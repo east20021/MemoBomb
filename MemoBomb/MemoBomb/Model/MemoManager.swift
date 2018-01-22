@@ -13,32 +13,41 @@ import RealmSwift
 class MemoManager {
 
     let realm = try! Realm()
-
-    /**
-     Delete local database
-     */
-    func delete() {
-        try! realm.write({
-            realm.deleteAll()
-        })
-    }
-
-    /**
-     Save array of objects to database
-     */
+    
     func save(objs: Memo) {
         try! realm.write({
-            // If update = true, objects that are already in the Realm will be
-            // updated instead of added a new.
             realm.add(objs)
         })
     }
+    
+    func deleteSwipe(memo: Memo)
+    {
+        try! realm.write {
+            realm.delete(memo)
+        }
+    }
+    
+    func delete(id: String) {
+        try! realm.write {
+            let memo = realm.object(ofType: Memo.self, forPrimaryKey: id)
+            realm.delete(memo!)
+        }
+    }
 
-    /**
-     Returs an array as Results<object>?
-     */
     func getMemo(type: Memo.Type) -> Results<Memo>? {
         return realm.objects(type)
+    }
+    
+    func update(id: String, text: String) {
+        let memo = realm.object(ofType: Memo.self, forPrimaryKey: id)
+        try! realm.write {
+            memo?.text = text
+        }
+    }
+    
+    func getText(id: String) -> String { 
+        let memo = realm.object(ofType: Memo.self, forPrimaryKey: id)
+        return (memo?.text)!
     }
     
     

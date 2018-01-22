@@ -16,7 +16,12 @@ import RealmSwift
 
 class Memo: Object {
     @objc dynamic var text: String = ""
-    @objc dynamic var isOpen: Bool = false
+    @objc dynamic var date: Date = Date()
+    @objc dynamic var id = UUID().uuidString
+    
+    override class func primaryKey() -> String? {
+        return "id"
+    }
 }
 
     

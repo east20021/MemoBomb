@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Edit View Controller-->
+        <scene sceneID="f3W-cT-fEy">
+            <objects>
+                <viewController storyboardIdentifier="editMemoVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="WpJ-K3-a0T" customClass="EditViewController" customModule="MemoBomb" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wlG-Tk-Kcw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Bwv-sa-UDV">
+                                <rect key="frame" x="0.0" y="63" width="375" height="604"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m4O-5z-x3j">
+                                <rect key="frame" x="0.0" y="20" width="375" height="43"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ici-so-56Z">
+                                        <rect key="frame" x="20" y="0.0" width="43" height="43"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="Ici-so-56Z" secondAttribute="height" multiplier="1:1" id="itc-ph-pBv"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="backButton"/>
+                                        <connections>
+                                            <action selector="backButton:" destination="WpJ-K3-a0T" eventType="touchUpInside" id="AGY-ue-Qmk"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ird-Sw-eQN">
+                                        <rect key="frame" x="312" y="0.0" width="43" height="43"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="Ird-Sw-eQN" secondAttribute="height" multiplier="1:1" id="a9O-Zv-Zq5"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="deleteButton"/>
+                                        <connections>
+                                            <action selector="deleteAction:" destination="WpJ-K3-a0T" eventType="touchUpInside" id="5wn-1f-VQK"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="Ici-so-56Z" firstAttribute="top" secondItem="m4O-5z-x3j" secondAttribute="top" id="1cj-mq-U2U"/>
+                                    <constraint firstAttribute="bottom" secondItem="Ird-Sw-eQN" secondAttribute="bottom" id="AnT-wo-8Yi"/>
+                                    <constraint firstItem="Ici-so-56Z" firstAttribute="centerY" secondItem="m4O-5z-x3j" secondAttribute="centerY" id="EOD-Ou-4Kh"/>
+                                    <constraint firstItem="Ici-so-56Z" firstAttribute="leading" secondItem="m4O-5z-x3j" secondAttribute="leading" constant="20" id="JdV-QO-psc"/>
+                                    <constraint firstAttribute="bottom" secondItem="Ici-so-56Z" secondAttribute="bottom" id="OSb-gh-k66"/>
+                                    <constraint firstItem="Ird-Sw-eQN" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="m4O-5z-x3j" secondAttribute="leading" constant="20" symbolic="YES" id="QdN-SX-BPD"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Ici-so-56Z" secondAttribute="trailing" constant="20" symbolic="YES" id="etF-Ap-3et"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ird-Sw-eQN" secondAttribute="trailing" constant="20" id="rKX-jB-q4i"/>
+                                    <constraint firstItem="Ird-Sw-eQN" firstAttribute="top" secondItem="m4O-5z-x3j" secondAttribute="top" id="tW9-k7-bDI"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="m4O-5z-x3j" firstAttribute="top" secondItem="5Il-Pe-bhB" secondAttribute="top" id="0tP-P7-8eE"/>
+                            <constraint firstItem="Bwv-sa-UDV" firstAttribute="leading" secondItem="5Il-Pe-bhB" secondAttribute="leading" id="6G5-aj-lOq"/>
+                            <constraint firstItem="5Il-Pe-bhB" firstAttribute="bottom" secondItem="Bwv-sa-UDV" secondAttribute="bottom" id="BfO-lL-G3y"/>
+                            <constraint firstItem="Bwv-sa-UDV" firstAttribute="height" secondItem="m4O-5z-x3j" secondAttribute="height" multiplier="14:1" id="KSd-Qu-Ng1"/>
+                            <constraint firstItem="5Il-Pe-bhB" firstAttribute="trailing" secondItem="Bwv-sa-UDV" secondAttribute="trailing" id="NN8-RM-jeQ"/>
+                            <constraint firstItem="m4O-5z-x3j" firstAttribute="leading" secondItem="5Il-Pe-bhB" secondAttribute="leading" id="TAZ-8y-msF"/>
+                            <constraint firstItem="Bwv-sa-UDV" firstAttribute="top" secondItem="m4O-5z-x3j" secondAttribute="bottom" id="TVt-SZ-spS"/>
+                            <constraint firstItem="5Il-Pe-bhB" firstAttribute="trailing" secondItem="m4O-5z-x3j" secondAttribute="trailing" id="bHN-lh-nit"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="5Il-Pe-bhB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="wa2-ee-7zG"/>
+                    <connections>
+                        <outlet property="contentsView" destination="Bwv-sa-UDV" id="cef-dG-y6W"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O8q-qr-4ue" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1236" y="133"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="backButton" width="100" height="100"/>
+        <image name="deleteButton" width="100" height="100"/>
+    </resources>
+</document>

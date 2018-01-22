@@ -17,6 +17,7 @@ class MemoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        contentsView.becomeFirstResponder()
 
     }
     
@@ -28,7 +29,10 @@ class MemoViewController: UIViewController {
     }
     
     @IBAction func doneButton(_ sender: Any) {
-        addMemo()
+        if contentsView.text.count != 0 {
+          addMemo()
+        }
+        contentsView.resignFirstResponder()
         dismiss(animated: true, completion: nil)
     }
     
