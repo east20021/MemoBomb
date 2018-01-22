@@ -49,16 +49,24 @@
                                             <action selector="deleteAction:" destination="WpJ-K3-a0T" eventType="touchUpInside" id="5wn-1f-VQK"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jwh-rW-GIF">
+                                        <rect key="frame" x="63" y="0.0" width="249" height="43"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="Ici-so-56Z" firstAttribute="top" secondItem="m4O-5z-x3j" secondAttribute="top" id="1cj-mq-U2U"/>
+                                    <constraint firstItem="Ird-Sw-eQN" firstAttribute="leading" secondItem="jwh-rW-GIF" secondAttribute="trailing" id="1vi-KL-5No"/>
                                     <constraint firstAttribute="bottom" secondItem="Ird-Sw-eQN" secondAttribute="bottom" id="AnT-wo-8Yi"/>
                                     <constraint firstItem="Ici-so-56Z" firstAttribute="centerY" secondItem="m4O-5z-x3j" secondAttribute="centerY" id="EOD-Ou-4Kh"/>
+                                    <constraint firstAttribute="bottom" secondItem="jwh-rW-GIF" secondAttribute="bottom" id="II7-M0-hcy"/>
                                     <constraint firstItem="Ici-so-56Z" firstAttribute="leading" secondItem="m4O-5z-x3j" secondAttribute="leading" constant="20" id="JdV-QO-psc"/>
                                     <constraint firstAttribute="bottom" secondItem="Ici-so-56Z" secondAttribute="bottom" id="OSb-gh-k66"/>
-                                    <constraint firstItem="Ird-Sw-eQN" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="m4O-5z-x3j" secondAttribute="leading" constant="20" symbolic="YES" id="QdN-SX-BPD"/>
-                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Ici-so-56Z" secondAttribute="trailing" constant="20" symbolic="YES" id="etF-Ap-3et"/>
+                                    <constraint firstItem="jwh-rW-GIF" firstAttribute="top" secondItem="m4O-5z-x3j" secondAttribute="top" id="ToI-1f-fHy"/>
+                                    <constraint firstItem="jwh-rW-GIF" firstAttribute="leading" secondItem="Ici-so-56Z" secondAttribute="trailing" id="dxp-5b-tyQ"/>
                                     <constraint firstAttribute="trailing" secondItem="Ird-Sw-eQN" secondAttribute="trailing" constant="20" id="rKX-jB-q4i"/>
                                     <constraint firstItem="Ird-Sw-eQN" firstAttribute="top" secondItem="m4O-5z-x3j" secondAttribute="top" id="tW9-k7-bDI"/>
                                 </constraints>
@@ -80,11 +88,12 @@
                     <navigationItem key="navigationItem" id="wa2-ee-7zG"/>
                     <connections>
                         <outlet property="contentsView" destination="Bwv-sa-UDV" id="cef-dG-y6W"/>
+                        <outlet property="dateLabel" destination="jwh-rW-GIF" id="HFE-ld-4go"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O8q-qr-4ue" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1236" y="133"/>
+            <point key="canvasLocation" x="1236" y="132.68365817091455"/>
         </scene>
     </scenes>
     <resources>

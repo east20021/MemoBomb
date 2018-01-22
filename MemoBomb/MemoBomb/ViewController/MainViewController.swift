@@ -54,6 +54,7 @@ class MainViewController: UIViewController {
     
 
 }
+
 extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return contentsList.count
@@ -62,7 +63,9 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let whiteCell = tableView.dequeueReusableCell(withIdentifier: "whiteCell", for: indexPath) as! WhiteTableViewCell
-        whiteCell.textLabel?.text = contentsList[indexPath.row].text
+        whiteCell.contentsLabel.text = contentsList[indexPath.row].text
+        whiteCell.dateLabel.text = memoManager.getDate(memo: contentsList[indexPath.row])
+        
         return whiteCell
     }
     
@@ -80,7 +83,6 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowDetail" {
             (segue.destination as! EditViewController).id = contentsList[(self.memoTableView.indexPathForSelectedRow)!.row].id
-            (segue.destination as! EditViewController).text = contentsList[(self.memoTableView.indexPathForSelectedRow)!.row].text
         }
     }
     

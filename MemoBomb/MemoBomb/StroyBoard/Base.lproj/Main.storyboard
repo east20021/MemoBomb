@@ -26,24 +26,39 @@
                                 <rect key="frame" x="0.0" y="112.66666666666669" width="414" height="581.66666666666652"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="whiteCell" rowHeight="164" id="PvC-3y-s30" customClass="WhiteTableViewCell" customModule="MemoBomb" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="164"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="whiteCell" rowHeight="269" id="PvC-3y-s30" customClass="WhiteTableViewCell" customModule="MemoBomb" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="269"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PvC-3y-s30" id="c3Q-Um-uQh">
-                                            <rect key="frame" x="0.0" y="0.0" width="381" height="163.66666666666666"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="381" height="268.66666666666669"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B47-zO-vNb">
-                                                    <rect key="frame" x="20" y="82" width="0.0" height="0.0"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B47-zO-vNb">
+                                                    <rect key="frame" x="0.0" y="10" width="381" height="0.0"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8dP-Fe-SNo">
+                                                    <rect key="frame" x="0.0" y="134.33333333333334" width="381" height="0.0"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="8dP-Fe-SNo" secondAttribute="trailing" id="HKG-Ef-IAf"/>
+                                                <constraint firstAttribute="trailing" secondItem="B47-zO-vNb" secondAttribute="trailing" id="SkF-GJ-eo0"/>
+                                                <constraint firstItem="B47-zO-vNb" firstAttribute="top" secondItem="c3Q-Um-uQh" secondAttribute="top" constant="10" id="YVf-MU-Tcc"/>
+                                                <constraint firstItem="8dP-Fe-SNo" firstAttribute="leading" secondItem="c3Q-Um-uQh" secondAttribute="leading" id="a05-fA-h5p"/>
+                                                <constraint firstItem="8dP-Fe-SNo" firstAttribute="centerY" secondItem="c3Q-Um-uQh" secondAttribute="centerY" id="aPx-PX-7je"/>
+                                                <constraint firstItem="B47-zO-vNb" firstAttribute="leading" secondItem="c3Q-Um-uQh" secondAttribute="leading" id="gpO-xd-w8k"/>
+                                                <constraint firstItem="8dP-Fe-SNo" firstAttribute="height" secondItem="B47-zO-vNb" secondAttribute="height" multiplier="3:1" id="qmT-5B-h8E"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="contentsLabel" destination="B47-zO-vNb" id="l9O-kU-FAa"/>
+                                            <outlet property="contentsLabel" destination="8dP-Fe-SNo" id="mml-S6-jsi"/>
+                                            <outlet property="dateLabel" destination="B47-zO-vNb" id="3vv-Fv-wQZ"/>
                                             <segue destination="bQY-Bl-bKW" kind="show" identifier="ShowDetail" id="bjl-Bq-IFf"/>
                                         </connections>
                                     </tableViewCell>

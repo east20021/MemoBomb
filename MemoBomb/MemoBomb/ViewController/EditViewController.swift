@@ -10,14 +10,14 @@ import UIKit
 
 class EditViewController: UIViewController {
     @IBOutlet weak var contentsView: UITextView!
+    @IBOutlet weak var dateLabel: UILabel!
     
     private var memoManager = MemoManager()
     var id = ""
-    var text = ""
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        let text = memoManager.getText(id: id)
         contentsView.text = text
         contentsView.becomeFirstResponder()
 

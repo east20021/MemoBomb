@@ -10,7 +10,9 @@ import UIKit
 
 class WhiteTableViewCell: UITableViewCell {
 
+    
     @IBOutlet weak var contentsLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
