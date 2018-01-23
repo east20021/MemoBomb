@@ -37,7 +37,7 @@ class MemoManager {
     }
 
     //메모 전체 불러오기
-    func getMemo(type: Memo.Type) -> Results<Memo>? {
+    func getMemos(type: Memo.Type) -> Results<Memo>? {
         return realm.objects(type)
     }
     
@@ -65,6 +65,11 @@ class MemoManager {
     
     func getDate(memo: Memo) -> Date {
         return memo.date
+    }
+    
+    func getMemo(id: String) -> Memo {
+        let memo = realm.object(ofType: Memo.self, forPrimaryKey: id)
+        return memo!
     }
 
 }

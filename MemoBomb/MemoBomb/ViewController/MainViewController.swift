@@ -34,7 +34,7 @@ class MainViewController: UIViewController {
             print("\(error)")
         }
         
-        contentsList = memoManager.getMemo(type: Memo.self)
+        contentsList = memoManager.getMemos(type: Memo.self)
         
         self.runtimer()
         
@@ -69,7 +69,7 @@ class MainViewController: UIViewController {
     
     func timeDiff(memo: Memo) -> Double {
         
-        let date = memoManager.getDate(memo:memo)
+        let date = memoManager.getDate(memo: memo)
         let currentDate = Date()
         
         let diffsec = currentDate.timeIntervalSince(date)
@@ -79,7 +79,8 @@ class MainViewController: UIViewController {
     
     @objc func updateTimer() {
         dateArray = setDateList()
-        print(dateArray)
+        NotificationCenter.default.post(name: .count, object: nil)
+//        print(dateArray)
     }
     //메모 삭제 시간 설정
     func setDateList() -> [Double] {
