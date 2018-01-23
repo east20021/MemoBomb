@@ -18,13 +18,15 @@ class MainViewController: UIViewController {
     private var realm: Realm!
     private var contentsList: Results<Memo>!
     private var token: NotificationToken!
-    
     private var memoManager = MemoManager()
-    var memoArray = [Memo]()
+    
+    
+    private var dateArray = [Double]()
+    private var timer = Timer()
+    private var isTimerRunning = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.navigationBar.isHidden = true
         
         do {
             realm = try Realm()
@@ -34,24 +36,63 @@ class MainViewController: UIViewController {
         
         contentsList = memoManager.getMemo(type: Memo.self)
         
-        
+        self.runtimer()
         
         token = contentsList.observe { notification in
+            
+            if self.contentsList.count == 0 {
+                self.timer.invalidate()
+                self.isTimerRunning = false
+            } else {
+                if self.isTimerRunning == false {
+                    self.runtimer()
+                    self.isTimerRunning = true
+                }
+            }
             self.memoTableView.reloadData()
         }
         
         if contentsList.count == 0 {
             let memo = Memo()
-            memo.text = "welcome to MemoBomb"
+            memo.text = "Welcome to MemoBomb"
             memo.id = "0"
             memoManager.save(objs: memo)
         }
-        
         
         print(NSHomeDirectory())
         
     }
     
+    func runtimer() {
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.updateTimer), userInfo: nil, repeats: true)
+    }
+    
+    func timeDiff(memo: Memo) -> Double {
+        
+        let date = memoManager.getDate(memo:memo)
+        let currentDate = Date()
+        
+        let diffsec = currentDate.timeIntervalSince(date)
+        
+        return diffsec
+    }
+    
+    @objc func updateTimer() {
+        dateArray = setDateList()
+        print(dateArray)
+    }
+    //메모 삭제 시간 설정
+    func setDateList() -> [Double] {
+        var array = [Double]()
+        for i in contentsList {
+            if timeDiff(memo: i) > (24 * 60 * 60) {
+                memoManager.deleteSwipe(memo: i)
+            } else {
+                array.append(timeDiff(memo: i))
+            }
+        }
+        return array
+    }
 
 }
 
@@ -64,7 +105,8 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         
         let whiteCell = tableView.dequeueReusableCell(withIdentifier: "whiteCell", for: indexPath) as! WhiteTableViewCell
         whiteCell.contentsLabel.text = contentsList[indexPath.row].text
-        whiteCell.dateLabel.text = memoManager.getDate(memo: contentsList[indexPath.row])
+        whiteCell.dateLabel.text = memoManager.getDateString(memo: contentsList[indexPath.row])
+        
         
         return whiteCell
     }

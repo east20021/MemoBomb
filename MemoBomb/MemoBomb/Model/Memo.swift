@@ -18,14 +18,11 @@ class Memo: Object {
     @objc dynamic var text: String = ""
     @objc dynamic var id = UUID().uuidString
     @objc dynamic var date: Date = Date()
+    @objc dynamic var time: Int = 0 
     
     
     override class func primaryKey() -> String? {
         return "id"
-    }
-    
-    func getDate() {
-        
     }
 }
 

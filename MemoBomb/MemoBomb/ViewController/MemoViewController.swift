@@ -18,7 +18,6 @@ class MemoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         contentsView.becomeFirstResponder()
-
     }
     
     func addMemo() {

@@ -34,13 +34,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B47-zO-vNb">
-                                                    <rect key="frame" x="0.0" y="10" width="381" height="0.0"/>
+                                                    <rect key="frame" x="20" y="10" width="361" height="0.0"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8dP-Fe-SNo">
-                                                    <rect key="frame" x="0.0" y="134.33333333333334" width="381" height="0.0"/>
+                                                    <rect key="frame" x="20" y="134.33333333333334" width="361" height="0.0"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -50,9 +50,9 @@
                                                 <constraint firstAttribute="trailing" secondItem="8dP-Fe-SNo" secondAttribute="trailing" id="HKG-Ef-IAf"/>
                                                 <constraint firstAttribute="trailing" secondItem="B47-zO-vNb" secondAttribute="trailing" id="SkF-GJ-eo0"/>
                                                 <constraint firstItem="B47-zO-vNb" firstAttribute="top" secondItem="c3Q-Um-uQh" secondAttribute="top" constant="10" id="YVf-MU-Tcc"/>
-                                                <constraint firstItem="8dP-Fe-SNo" firstAttribute="leading" secondItem="c3Q-Um-uQh" secondAttribute="leading" id="a05-fA-h5p"/>
+                                                <constraint firstItem="8dP-Fe-SNo" firstAttribute="leading" secondItem="c3Q-Um-uQh" secondAttribute="leading" constant="20" id="a05-fA-h5p"/>
                                                 <constraint firstItem="8dP-Fe-SNo" firstAttribute="centerY" secondItem="c3Q-Um-uQh" secondAttribute="centerY" id="aPx-PX-7je"/>
-                                                <constraint firstItem="B47-zO-vNb" firstAttribute="leading" secondItem="c3Q-Um-uQh" secondAttribute="leading" id="gpO-xd-w8k"/>
+                                                <constraint firstItem="B47-zO-vNb" firstAttribute="leading" secondItem="c3Q-Um-uQh" secondAttribute="leading" constant="20" id="gpO-xd-w8k"/>
                                                 <constraint firstItem="8dP-Fe-SNo" firstAttribute="height" secondItem="B47-zO-vNb" secondAttribute="height" multiplier="3:1" id="qmT-5B-h8E"/>
                                             </constraints>
                                         </tableViewCellContentView>

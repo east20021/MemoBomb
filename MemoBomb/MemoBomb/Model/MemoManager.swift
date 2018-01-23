@@ -22,8 +22,7 @@ class MemoManager {
     }
     
     //메모 삭제(스와이프)
-    func deleteSwipe(memo: Memo)
-    {
+    func deleteSwipe(memo: Memo) {
         try! realm.write {
             realm.delete(memo)
         }
@@ -56,22 +55,17 @@ class MemoManager {
         return (memo?.text)!
     }
     
-    func getDate(id: String) -> String {
-        let memo = realm.object(ofType: Memo.self, forPrimaryKey: id)
-        let formatter = DateFormatter()
-        formatter.locale = Locale(identifier: "ko_KR")
-        formatter.dateFormat = "yyyy-MM-dd"
-        return formatter.string(from: (memo?.date)!)
-    }
-    
-    func getDate(memo: Memo) -> String {
+    //메모의 Date값 String 값으로 표시
+    func getDateString(memo: Memo) -> String {
         let formatter = DateFormatter()
         formatter.locale = Locale(identifier: "ko_KR")
         formatter.dateFormat = "yyyy-MM-dd"
         return formatter.string(from: (memo.date))
     }
     
-    
+    func getDate(memo: Memo) -> Date {
+        return memo.date
+    }
 
 }
 

@@ -13,7 +13,9 @@ class EditViewController: UIViewController {
     @IBOutlet weak var dateLabel: UILabel!
     
     private var memoManager = MemoManager()
+    private var timerCount = 0
     var id = ""
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,11 +25,14 @@ class EditViewController: UIViewController {
 
     }
     
+    
+    
     @IBAction func backButton(_ sender: Any) {
         memoManager.update(id: id, text: contentsView.text)
         contentsView.resignFirstResponder()
         dismiss(animated: true, completion: nil)
     }
+    
     @IBAction func deleteAction(_ sender: Any) {
         memoManager.delete(id: id)
         contentsView.resignFirstResponder()
@@ -35,3 +40,5 @@ class EditViewController: UIViewController {
     }
     
 }
+
+
