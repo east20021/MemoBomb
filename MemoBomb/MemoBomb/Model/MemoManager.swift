@@ -21,8 +21,8 @@ class MemoManager {
         })
     }
     
-    //메모 삭제(스와이프)
-    func deleteSwipe(memo: Memo) {
+    //메모 삭제
+    func deleteMemo(memo: Memo) {
         try! realm.write {
             realm.delete(memo)
         }

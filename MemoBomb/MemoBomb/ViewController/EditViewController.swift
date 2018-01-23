@@ -13,8 +13,10 @@ class EditViewController: UIViewController {
     @IBOutlet weak var dateLabel: UILabel!
     
     private var memoManager = MemoManager()
-    private var count:Double = (24 * 60 * 60)
-    private var date = 0.0
+    private var currentDate = 0.0
+    private let setTime: Double = (24 * 60 * 60)
+    
+    //tableView에서 받는 데이터
     var id = ""
     
 
@@ -24,29 +26,32 @@ class EditViewController: UIViewController {
         contentsView.text = text
         contentsView.becomeFirstResponder()
         
-        date = timeDiff(memo:memoManager.getMemo(id: id))
-        dateLabel.text = timeString(time: count - date)
+        currentDate = timeDiff(memo:memoManager.getMemo(id: id))
+        dateLabel.text = timeString(time: setTime - currentDate)
         
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(setTimer(notfication:)), name: .count, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(setTimer(notfication:)), name: .timer, object: nil)
 
     }
     
     @objc func setTimer(notfication : NSNotification) {
-        date = timeDiff(memo:memoManager.getMemo(id: id))
-        dateLabel.text = timeString(time: count - date)
+        let memo: Memo = memoManager.getMemo(id: id)
+        currentDate = timeDiff(memo:memo)
+        if setTime - currentDate < 1 {
+            memoManager.delete(id: id)
+            dismiss(animated: true, completion: nil)
+        } else {
+            dateLabel.text = timeString(time: setTime - currentDate)
+        }
     }
     
     func timeDiff(memo: Memo) -> Double {
-        
         let date = memoManager.getDate(memo: memo)
         let currentDate = Date()
-        
-        let diffsec = currentDate.timeIntervalSince(date)
-        
-        return diffsec
+        let diffseconds = currentDate.timeIntervalSince(date)
+        return diffseconds
     }
     
+    //00:00:00 포멧 적용
     func timeString (time: Double) -> String {
         let hours = Int(time) / 3600
         let minutes = Int(time) / 60 % 60
@@ -69,7 +74,7 @@ class EditViewController: UIViewController {
 }
 
 extension Notification.Name {
-    static let count = Notification.Name("count")
+    static let timer = Notification.Name("timer")
 }
 
 
