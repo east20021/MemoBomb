@@ -27,14 +27,6 @@ class MemoManager {
             realm.delete(memo)
         }
     }
-    
-    //메모 삭제(id값 이용)
-    func delete(id: String) {
-        try! realm.write {
-            let memo = realm.object(ofType: Memo.self, forPrimaryKey: id)
-            realm.delete(memo!)
-        }
-    }
 
     //메모 전체 불러오기
     func getMemos(type: Memo.Type) -> Results<Memo>? {
@@ -42,10 +34,17 @@ class MemoManager {
     }
     
     //메모 업데이트
-    func update(id: String, text: String) {
+    func updateText(id: String, text: String) {
         let memo = realm.object(ofType: Memo.self, forPrimaryKey: id)
         try! realm.write {
             memo?.text = text
+        }
+    }
+    
+    func updateDate(id: String, date: Date) {
+        let memo = realm.object(ofType: Memo.self, forPrimaryKey: id)
+        try! realm.write {
+            memo?.date = date
         }
     }
     
@@ -61,10 +60,6 @@ class MemoManager {
         formatter.locale = Locale(identifier: "ko_KR")
         formatter.dateFormat = "yyyy-MM-dd"
         return formatter.string(from: (memo.date))
-    }
-    
-    func getDate(memo: Memo) -> Date {
-        return memo.date
     }
     
     func getMemo(id: String) -> Memo {

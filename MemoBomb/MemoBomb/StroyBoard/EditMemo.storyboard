@@ -44,9 +44,9 @@
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Ird-Sw-eQN" secondAttribute="height" multiplier="1:1" id="a9O-Zv-Zq5"/>
                                         </constraints>
-                                        <state key="normal" title="Button" image="deleteButton"/>
+                                        <state key="normal" title="Button" image="resetButton"/>
                                         <connections>
-                                            <action selector="deleteAction:" destination="WpJ-K3-a0T" eventType="touchUpInside" id="5wn-1f-VQK"/>
+                                            <action selector="resetAction:" destination="WpJ-K3-a0T" eventType="touchUpInside" id="kyM-nM-tVy"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jwh-rW-GIF">
@@ -89,6 +89,7 @@
                     <connections>
                         <outlet property="contentsView" destination="Bwv-sa-UDV" id="cef-dG-y6W"/>
                         <outlet property="dateLabel" destination="jwh-rW-GIF" id="HFE-ld-4go"/>
+                        <outlet property="resetButton" destination="Ird-Sw-eQN" id="YDk-0w-caZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O8q-qr-4ue" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -98,6 +99,6 @@
     </scenes>
     <resources>
         <image name="backButton" width="100" height="100"/>
-        <image name="deleteButton" width="100" height="100"/>
+        <image name="resetButton" width="100" height="100"/>
     </resources>
 </document>

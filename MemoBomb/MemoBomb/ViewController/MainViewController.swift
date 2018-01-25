@@ -17,13 +17,14 @@ class MainViewController: UIViewController {
     private var realm: Realm!
     private var contentsList: Results<Memo>!
     private var token: NotificationToken!
-    private var memoManager = MemoManager()
-    
+    private let memoManager = MemoManager()
+    private let timeManager = TimeManager()
     
     private var dateArray = [Double]()
     private var timer = Timer()
     private var isTimerRunning = true
-    private let setTime:Double = (24 * 60 * 60)
+    private var timeDiff: Double = 0.0
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,9 +52,7 @@ class MainViewController: UIViewController {
             }
             self.memoTableView.reloadData()
         }
-        
         print(NSHomeDirectory())
-        
     }
     
     //set timer
@@ -66,31 +65,21 @@ class MainViewController: UIViewController {
         NotificationCenter.default.post(name: .timer, object: nil)
     }
     
-    func timeDiff(memo: Memo) -> Double {
-        let date = memoManager.getDate(memo: memo)
-        let currentDate = Date()
-        let diffseconds = currentDate.timeIntervalSince(date)
-        return diffseconds
-    }
-    
     //메모 삭제 시간 설정
     func setDateList() -> [Double] {
         var array = [Double]()
-        for i in contentsList {
-            if timeDiff(memo: i) > setTime {
-                memoManager.deleteMemo(memo: i)
+        for memo in contentsList {
+            if timeManager.timeDiff(memo: memo) > timeManager.setDeleteTime() {
+                memoManager.deleteMemo(memo: memo)
             } else {
-                array.append(timeDiff(memo: i))
+                array.append(timeManager.timeDiff(memo: memo))
             }
         }
         return array
     }
-    
-    
-
 }
 
-//테이블뷰 관련
+//테이블뷰
 extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return contentsList.count

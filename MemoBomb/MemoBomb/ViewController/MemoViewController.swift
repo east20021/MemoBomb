@@ -24,7 +24,6 @@ class MemoViewController: UIViewController {
         let newMemo = Memo()
         newMemo.text = contentsView.text
         memoManager.save(objs: newMemo)
-        
     }
     
     @IBAction func doneButton(_ sender: Any) {

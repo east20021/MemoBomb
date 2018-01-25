@@ -11,64 +11,83 @@ import UIKit
 class EditViewController: UIViewController {
     @IBOutlet weak var contentsView: UITextView!
     @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var resetButton: UIButton!
     
-    private var memoManager = MemoManager()
-    private var currentDate = 0.0
-    private let setTime: Double = (24 * 60 * 60)
+    private let memoManager: MemoManager = MemoManager()
+    private let timeManager: TimeManager = TimeManager()
+    //갱신가능시간
+    private let renewableTime: Double = (6 * 60 * 60)
     
-    //tableView에서 받는 데이터
+    private var remainSeconds: Double = 0.0
+    private var memo: Memo = Memo()
+    
+    //tableView에서 EditVC로 넘어올 때 받는 id값
     var id = ""
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let text = memoManager.getText(id: id)
-        contentsView.text = text
+        self.setMemo()
+        self.setLabel()
+        self.setResetButton()
+        
         contentsView.becomeFirstResponder()
-        
-        currentDate = timeDiff(memo:memoManager.getMemo(id: id))
-        dateLabel.text = timeString(time: setTime - currentDate)
-        
+       
         NotificationCenter.default.addObserver(self, selector: #selector(setTimer(notfication:)), name: .timer, object: nil)
-
     }
     
     @objc func setTimer(notfication : NSNotification) {
-        let memo: Memo = memoManager.getMemo(id: id)
-        currentDate = timeDiff(memo:memo)
-        if setTime - currentDate < 1 {
-            memoManager.delete(id: id)
+        setTimerSeconds()
+        
+        if isResetPossible() {
+            resetButton.isHidden = false
+        }
+        if isDeleteMemo() {
+            memoManager.deleteMemo(memo: memo)
             dismiss(animated: true, completion: nil)
         } else {
-            dateLabel.text = timeString(time: setTime - currentDate)
+            dateLabel.text = timeManager.timeString(time: remainSeconds)
         }
     }
     
-    func timeDiff(memo: Memo) -> Double {
-        let date = memoManager.getDate(memo: memo)
-        let currentDate = Date()
-        let diffseconds = currentDate.timeIntervalSince(date)
-        return diffseconds
-    }
-    
-    //00:00:00 포멧 적용
-    func timeString (time: Double) -> String {
-        let hours = Int(time) / 3600
-        let minutes = Int(time) / 60 % 60
-        let seconds = Int(time) % 60
-        return String(format: "%02i:%02i:%02i", hours, minutes, seconds)
-    }
-    
     @IBAction func backButton(_ sender: Any) {
-        memoManager.update(id: id, text: contentsView.text)
+        memoManager.updateText(id: id, text: contentsView.text)
         contentsView.resignFirstResponder()
         dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func deleteAction(_ sender: Any) {
-        memoManager.delete(id: id)
-        contentsView.resignFirstResponder()
-        dismiss(animated: true, completion: nil)
+    @IBAction func resetAction(_ sender: Any) {
+        resetButton.isHidden = true
+        memoManager.updateDate(id: id, date: Date())
+    }
+    
+    func setMemo() {
+        memo = memoManager.getMemo(id: id)
+    }
+    
+    func setTimerSeconds() {
+        remainSeconds = timeManager.remainSeconds(memo: memo)
+    }
+    
+    func isResetPossible() -> Bool {
+        return remainSeconds < renewableTime
+    }
+    
+    func isDeleteMemo() -> Bool {
+        return remainSeconds < 1
+    }
+    
+    func setLabel() {
+        setTimerSeconds()
+        contentsView.text = memo.text
+        dateLabel.text = timeManager.timeString(time: remainSeconds)
+    }
+    
+    func setResetButton() {
+        if isResetPossible() {
+            resetButton.isHidden = false
+        } else {
+            resetButton.isHidden = true
+        }
     }
     
 }

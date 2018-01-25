@@ -19,6 +19,7 @@
 		9B508381200FCB9600466450 /* WhiteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B508380200FCB9600466450 /* WhiteTableViewCell.swift */; };
 		9B5083D5200FE18000466450 /* Memo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5083D4200FE18000466450 /* Memo.swift */; };
 		9B8CE98A2016154600D62D72 /* EditMemo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B8CE9892016154600D62D72 /* EditMemo.storyboard */; };
+		9BA02A752019959B00359D55 /* TimeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA02A742019959B00359D55 /* TimeManager.swift */; };
 		F618CE55F35EDE27444D7399 /* Pods_MemoBomb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9D22EC087F16912EB5E6B35 /* Pods_MemoBomb.framework */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +39,7 @@
 		9B508380200FCB9600466450 /* WhiteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiteTableViewCell.swift; sourceTree = "<group>"; };
 		9B5083D4200FE18000466450 /* Memo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memo.swift; sourceTree = "<group>"; };
 		9B8CE9892016154600D62D72 /* EditMemo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditMemo.storyboard; sourceTree = "<group>"; };
+		9BA02A742019959B00359D55 /* TimeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeManager.swift; sourceTree = "<group>"; };
 		CD5888EA56256B47C82DCF4B /* Pods-MemoBomb.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemoBomb.release.xcconfig"; path = "Pods/Target Support Files/Pods-MemoBomb/Pods-MemoBomb.release.xcconfig"; sourceTree = "<group>"; };
 		D9D22EC087F16912EB5E6B35 /* Pods_MemoBomb.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MemoBomb.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -76,6 +78,7 @@
 			children = (
 				9B5083D4200FE18000466450 /* Memo.swift */,
 				9B4AE61A2012878C00E94BA6 /* MemoManager.swift */,
+				9BA02A742019959B00359D55 /* TimeManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 				9B50836B200FC11D00466450 /* AppDelegate.swift in Sources */,
 				9B508381200FCB9600466450 /* WhiteTableViewCell.swift in Sources */,
 				9B5083D5200FE18000466450 /* Memo.swift in Sources */,
+				9BA02A752019959B00359D55 /* TimeManager.swift in Sources */,
 				9B4AE6102011F19100E94BA6 /* EditViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

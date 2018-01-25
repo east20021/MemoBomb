@@ -26,21 +26,21 @@
                                 <rect key="frame" x="0.0" y="112.66666666666669" width="414" height="581.66666666666652"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="whiteCell" rowHeight="269" id="PvC-3y-s30" customClass="WhiteTableViewCell" customModule="MemoBomb" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="whiteCell" rowHeight="269" id="PvC-3y-s30" customClass="WhiteTableViewCell" customModule="MemoBomb" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="269"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PvC-3y-s30" id="c3Q-Um-uQh">
-                                            <rect key="frame" x="0.0" y="0.0" width="381" height="268.66666666666669"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="268.66666666666669"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B47-zO-vNb">
-                                                    <rect key="frame" x="20" y="10" width="361" height="0.0"/>
+                                                    <rect key="frame" x="20" y="10" width="394" height="0.0"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8dP-Fe-SNo">
-                                                    <rect key="frame" x="20" y="134.33333333333334" width="361" height="0.0"/>
+                                                    <rect key="frame" x="20" y="134.33333333333334" width="394" height="0.0"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
