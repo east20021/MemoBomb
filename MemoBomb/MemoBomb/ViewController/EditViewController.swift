@@ -32,8 +32,6 @@ class EditViewController: UIViewController {
     }
     
     @objc func setTimer(notfication : NSNotification) {
-        setTimerSeconds()
-        
         if isResetPossible() {
             resetButton.isHidden = false
         }
@@ -41,6 +39,7 @@ class EditViewController: UIViewController {
             memoManager.deleteMemo(memo: memo)
             dismiss(animated: true, completion: nil)
         } else {
+            setRemainSeconds()
             dateLabel.text = timeManager.timeString(time: remainSeconds)
         }
     }
@@ -56,7 +55,7 @@ class EditViewController: UIViewController {
         memoManager.updateDate(id: id, date: Date())
     }
     
-    func setTimerSeconds() {
+    func setRemainSeconds() {
         remainSeconds = timeManager.remainSeconds(memo: memo)
     }
     
@@ -70,7 +69,7 @@ class EditViewController: UIViewController {
     
     func setUI() {
         memo = memoManager.getMemo(id: id)
-        setTimerSeconds()
+        setRemainSeconds()
         
         contentsView.text = memo.text
         contentsView.becomeFirstResponder()
