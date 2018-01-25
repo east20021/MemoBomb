@@ -26,9 +26,9 @@ class EditViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUI()
-
-        NotificationCenter.default.addObserver(self, selector: #selector(setTimer(notfication:)), name: .timer, object: nil)
+        self.setUI()
+        self.setObservTimer()
+        
     }
     
     @objc func setTimer(notfication : NSNotification) {
@@ -81,6 +81,10 @@ class EditViewController: UIViewController {
         } else {
             resetButton.isHidden = true
         }
+    }
+    
+    func setObservTimer() {
+        NotificationCenter.default.addObserver(self, selector: #selector(setTimer(notfication:)), name: .timer, object: nil)
     }
 }
 

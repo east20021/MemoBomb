@@ -22,60 +22,80 @@ class MainViewController: UIViewController {
     
     private var dateArray = [Double]()
     private var timer = Timer()
-    private var isTimerRunning = true
+    private var isTimerRunning = false
     private var timeDiff: Double = 0.0
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.setRealm()
+        self.setDateArray()
+        self.setTimer()
+        self.setNotificationRealmDB()
+        //realmDB 디렉토리 위치
+        print(NSHomeDirectory())
+    }
+    
+    func setRealm() {
         do {
             realm = try Realm()
         } catch {
             print("\(error)")
         }
-        
         contentsList = memoManager.getMemos(type: Memo.self)
-        dateArray = setDateList()
-        
-        self.runtimer()
-        
-        token = contentsList.observe { notification in
-            if self.contentsList.count == 0 {
-                self.timer.invalidate()
-                self.isTimerRunning = false
-            } else {
-                if self.isTimerRunning == false {
-                    self.runtimer()
-                    self.isTimerRunning = true
-                }
-            }
-            self.memoTableView.reloadData()
-        }
-        print(NSHomeDirectory())
     }
     
-    //set timer
-    func runtimer() {
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.updateTimer), userInfo: nil, repeats: true)
-    }
-    
-    @objc func updateTimer() {
+    func setDateArray() {
         dateArray = setDateList()
-        NotificationCenter.default.post(name: .timer, object: nil)
     }
     
     //메모 삭제 시간 설정
     func setDateList() -> [Double] {
         var array = [Double]()
         for memo in contentsList {
-            if timeManager.timeDiff(memo: memo) > timeManager.setDeleteTime() {
+            if isDeleteMemo(memo: memo) {
                 memoManager.deleteMemo(memo: memo)
             } else {
                 array.append(timeManager.timeDiff(memo: memo))
             }
         }
         return array
+    }
+    
+    func setTimer() {
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.updateTimer), userInfo: nil, repeats: true)
+        self.isTimerRunning = true
+    }
+    
+    @objc func updateTimer() {
+        setDateArray()
+        NotificationCenter.default.post(name: .timer, object: nil)
+    }
+    
+    func isDeleteMemo(memo: Memo ) -> Bool{
+        return timeManager.remainSeconds(memo: memo) < 1
+    }
+    
+    func setNotificationRealmDB() {
+        
+        token = contentsList.observe { notification in
+            
+            if self.isContentsListEmpty() {
+                self.invalidateTimer()
+            } else {
+                self.setTimer()
+            }
+            self.memoTableView.reloadData()
+        }
+    }
+    
+    func isContentsListEmpty() -> Bool {
+        return self.contentsList.count < 1
+    }
+    
+    func invalidateTimer() {
+        self.timer.invalidate()
+        self.isTimerRunning = false
     }
 }
 
@@ -109,7 +129,6 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
             (segue.destination as! EditViewController).id = contentsList[(self.memoTableView.indexPathForSelectedRow)!.row].id
         }
     }
-    
 }
 
 
