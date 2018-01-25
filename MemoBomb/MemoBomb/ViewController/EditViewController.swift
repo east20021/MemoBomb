@@ -31,42 +31,6 @@ class EditViewController: UIViewController {
         
     }
     
-    @objc func setTimer(notfication : NSNotification) {
-        if isResetPossible() {
-            resetButton.isHidden = false
-        }
-        if isDeleteMemo() {
-            memoManager.deleteMemo(memo: memo)
-            dismiss(animated: true, completion: nil)
-        } else {
-            setRemainSeconds()
-            dateLabel.text = timeManager.timeString(time: remainSeconds)
-        }
-    }
-    
-    @IBAction func backButton(_ sender: Any) {
-        memoManager.updateText(id: id, text: contentsView.text)
-        contentsView.resignFirstResponder()
-        dismiss(animated: true, completion: nil)
-    }
-    
-    @IBAction func resetAction(_ sender: Any) {
-        resetButton.isHidden = true
-        memoManager.updateDate(id: id, date: Date())
-    }
-    
-    func setRemainSeconds() {
-        remainSeconds = timeManager.remainSeconds(memo: memo)
-    }
-    
-    func isResetPossible() -> Bool {
-        return remainSeconds < renewableTime
-    }
-    
-    func isDeleteMemo() -> Bool {
-        return remainSeconds < 1
-    }
-    
     func setUI() {
         memo = memoManager.getMemo(id: id)
         setRemainSeconds()
@@ -85,6 +49,42 @@ class EditViewController: UIViewController {
     
     func setObservTimer() {
         NotificationCenter.default.addObserver(self, selector: #selector(setTimer(notfication:)), name: .timer, object: nil)
+    }
+    
+    @objc func setTimer(notfication : NSNotification) {
+        if isResetPossible() {
+            resetButton.isHidden = false
+        }
+        if isDeleteMemo() {
+            memoManager.deleteMemo(memo: memo)
+            dismiss(animated: true, completion: nil)
+        } else {
+            setRemainSeconds()
+            dateLabel.text = timeManager.timeString(time: remainSeconds)
+        }
+    }
+    
+    func setRemainSeconds() {
+        remainSeconds = timeManager.remainSeconds(memo: memo)
+    }
+    
+    func isResetPossible() -> Bool {
+        return remainSeconds < renewableTime
+    }
+    
+    func isDeleteMemo() -> Bool {
+        return remainSeconds < 1
+    }
+    
+    @IBAction func backButton(_ sender: Any) {
+        memoManager.updateText(id: id, text: contentsView.text)
+        contentsView.resignFirstResponder()
+        dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func resetAction(_ sender: Any) {
+        resetButton.isHidden = true
+        memoManager.updateDate(id: id, date: Date())
     }
 }
 
