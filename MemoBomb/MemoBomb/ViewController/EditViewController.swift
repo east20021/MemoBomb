@@ -56,10 +56,6 @@ class EditViewController: UIViewController {
         memoManager.updateDate(id: id, date: Date())
     }
     
-    func setMemo() {
-        memo = memoManager.getMemo(id: id)
-    }
-    
     func setTimerSeconds() {
         remainSeconds = timeManager.remainSeconds(memo: memo)
     }
