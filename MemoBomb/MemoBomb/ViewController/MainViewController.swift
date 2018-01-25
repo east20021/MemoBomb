@@ -17,14 +17,13 @@ class MainViewController: UIViewController {
     private var realm: Realm!
     private var contentsList: Results<Memo>!
     private var token: NotificationToken!
+    
     private let memoManager = MemoManager()
     private let timeManager = TimeManager()
     
     private var dateArray = [Double]()
     private var timer = Timer()
     private var isTimerRunning = false
-    private var timeDiff: Double = 0.0
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
