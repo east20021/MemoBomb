@@ -26,12 +26,8 @@ class EditViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setMemo()
-        self.setLabel()
-        self.setResetButton()
-        
-        contentsView.becomeFirstResponder()
-       
+        setUI()
+
         NotificationCenter.default.addObserver(self, selector: #selector(setTimer(notfication:)), name: .timer, object: nil)
     }
     
@@ -76,20 +72,21 @@ class EditViewController: UIViewController {
         return remainSeconds < 1
     }
     
-    func setLabel() {
+    func setUI() {
+        memo = memoManager.getMemo(id: id)
         setTimerSeconds()
+        
         contentsView.text = memo.text
+        contentsView.becomeFirstResponder()
+        
         dateLabel.text = timeManager.timeString(time: remainSeconds)
-    }
-    
-    func setResetButton() {
+        
         if isResetPossible() {
             resetButton.isHidden = false
         } else {
             resetButton.isHidden = true
         }
     }
-    
 }
 
 extension Notification.Name {
