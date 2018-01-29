@@ -32,6 +32,7 @@ class MainViewController: UIViewController {
         self.setTimer()
         self.setNotificationRealmDB()
         //realmDB 디렉토리 위치
+        
         print(NSHomeDirectory())
     }
     
@@ -120,6 +121,10 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
             memoManager.deleteMemo(memo: contentsList[indexPath.row])
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
+    }
+    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return UIView()
     }
     
     //segue를 이용하여 EditVC에 id값 전달
