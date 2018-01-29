@@ -32,6 +32,7 @@ class MainViewController: UIViewController {
         self.setTimer()
         self.setNotificationRealmDB()
         //realmDB 디렉토리 위치
+        setTableView()
         
         print(NSHomeDirectory())
     }
@@ -97,10 +98,20 @@ class MainViewController: UIViewController {
         self.timer.invalidate()
         self.isTimerRunning = false
     }
+    
+    func setProgressBarValue(date: Double) -> CGFloat {
+        let totalTime = timeManager.setDeleteTime()
+        let remainTime: CGFloat = CGFloat(date / totalTime)
+        return remainTime
+    }
 }
 
 //테이블뷰
 extension MainViewController: UITableViewDelegate, UITableViewDataSource {
+    func setTableView() {
+        memoTableView.separatorStyle = UITableViewCellSeparatorStyle.none
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return contentsList.count
     }
@@ -109,8 +120,12 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         let whiteCell = tableView.dequeueReusableCell(withIdentifier: "whiteCell", for: indexPath) as! WhiteTableViewCell
         whiteCell.contentsLabel.text = contentsList[indexPath.row].text
         whiteCell.dateLabel.text = memoManager.getDateString(memo: contentsList[indexPath.row])
+        
+        let date = timeManager.remainSeconds(memo: contentsList[indexPath.row])
+        whiteCell.progressWidth = whiteCell.progressWidth.changeMultiplier(changeMultiplier: 1.0)
         return whiteCell
     }
+
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 120
@@ -122,6 +137,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
+   
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         return UIView()
@@ -134,5 +150,3 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
 }
-
-

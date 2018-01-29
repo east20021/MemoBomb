@@ -9,6 +9,7 @@
 import Foundation
 
 class TimeManager {
+    
     func setDeleteTime() -> Double {
         return (24 * 60 * 60)
     }

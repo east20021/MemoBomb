@@ -10,9 +10,10 @@ import UIKit
 
 class WhiteTableViewCell: UITableViewCell {
 
-    
+    @IBOutlet weak var progressWidth: NSLayoutConstraint!
     @IBOutlet weak var contentsLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,4 +26,21 @@ class WhiteTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+}
+
+extension NSLayoutConstraint {
+    func changeMultiplier(changeMultiplier: CGFloat) -> NSLayoutConstraint {
+        NSLayoutConstraint.deactivate([self])
+        
+        let newConstraint = NSLayoutConstraint(item: self.firstItem!,
+                                               attribute: self.firstAttribute,
+                                               relatedBy: self.relation, toItem: self.secondItem, attribute: self.secondAttribute, multiplier: changeMultiplier, constant: self.constant)
+        
+        newConstraint.priority = self.priority
+        newConstraint.shouldBeArchived = self.shouldBeArchived
+        newConstraint.identifier = self.identifier
+        NSLayoutConstraint.activate([newConstraint])
+        
+        return newConstraint
+    }
 }
