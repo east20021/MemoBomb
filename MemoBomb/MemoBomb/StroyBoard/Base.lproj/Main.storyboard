@@ -49,8 +49,8 @@
                                                     <rect key="frame" x="0.0" y="161.33333333333334" width="414" height="107.33333333333334"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xyw-W8-hpK">
-                                                            <rect key="frame" x="0.0" y="43" width="414" height="21.333333333333329"/>
-                                                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <rect key="frame" x="0.0" y="48.333333333333314" width="414" height="10.666666666666664"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </view>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -59,7 +59,7 @@
                                                         <constraint firstItem="xyw-W8-hpK" firstAttribute="centerY" secondItem="Eax-Gl-AQv" secondAttribute="centerY" id="4Ve-Ie-BO5"/>
                                                         <constraint firstItem="xyw-W8-hpK" firstAttribute="width" secondItem="Eax-Gl-AQv" secondAttribute="width" id="4ri-eN-4rL"/>
                                                         <constraint firstItem="xyw-W8-hpK" firstAttribute="centerX" secondItem="Eax-Gl-AQv" secondAttribute="centerX" id="M2A-Md-b6o"/>
-                                                        <constraint firstItem="xyw-W8-hpK" firstAttribute="height" secondItem="Eax-Gl-AQv" secondAttribute="height" multiplier="1:5" id="YC4-6G-3x1"/>
+                                                        <constraint firstItem="xyw-W8-hpK" firstAttribute="height" secondItem="Eax-Gl-AQv" secondAttribute="height" multiplier="1:10" id="YC4-6G-3x1"/>
                                                         <constraint firstItem="xyw-W8-hpK" firstAttribute="leading" secondItem="Eax-Gl-AQv" secondAttribute="leading" id="faj-ar-ukj"/>
                                                     </constraints>
                                                 </view>

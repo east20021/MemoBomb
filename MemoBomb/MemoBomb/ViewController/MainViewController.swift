@@ -71,6 +71,7 @@ class MainViewController: UIViewController {
     @objc func updateTimer() {
         setDateArray()
         NotificationCenter.default.post(name: .timer, object: nil)
+        self.memoTableView.reloadData()
     }
     
     func isDeleteMemo(memo: Memo ) -> Bool{
@@ -122,7 +123,8 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         whiteCell.dateLabel.text = memoManager.getDateString(memo: contentsList[indexPath.row])
         
         let date = timeManager.remainSeconds(memo: contentsList[indexPath.row])
-        whiteCell.progressWidth = whiteCell.progressWidth.changeMultiplier(changeMultiplier: 1.0)
+        whiteCell.progressWidth = whiteCell.progressWidth.changeMultiplier(changeMultiplier: self.setProgressBarValue(date: date ))
+        print("a")
         return whiteCell
     }
 
