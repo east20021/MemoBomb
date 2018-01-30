@@ -82,7 +82,7 @@
                                         <connections>
                                             <outlet property="contentsLabel" destination="8dP-Fe-SNo" id="mml-S6-jsi"/>
                                             <outlet property="dateLabel" destination="B47-zO-vNb" id="3vv-Fv-wQZ"/>
-                                            <outlet property="progressBar" destination="xyw-W8-hpK" id="8E4-Ai-iLD"/>
+                                            <outlet property="renewalStatusBar" destination="xyw-W8-hpK" id="4m9-rv-LSd"/>
                                             <segue destination="bQY-Bl-bKW" kind="show" identifier="ShowDetail" id="bjl-Bq-IFf"/>
                                         </connections>
                                     </tableViewCell>

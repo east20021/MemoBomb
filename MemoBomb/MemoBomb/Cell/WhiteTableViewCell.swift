@@ -12,7 +12,7 @@ class WhiteTableViewCell: UITableViewCell {
 
     @IBOutlet weak var contentsLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var progressBar: UIView!
+    @IBOutlet weak var renewalStatusBar: UIView!
     
     
     override func awakeFromNib() {

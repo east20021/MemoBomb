@@ -122,11 +122,11 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         
         switch contentsList[indexPath.row].renewalNum{
         case 0:
-            whiteCell.progressBar.backgroundColor = UIColor.black
+            whiteCell.renewalStatusBar.backgroundColor = UIColor.black
         case 1:
-            whiteCell.progressBar.backgroundColor = UIColor.yellow
+            whiteCell.renewalStatusBar.backgroundColor = UIColor.yellow
         default:
-            whiteCell.progressBar.backgroundColor = UIColor.green
+            whiteCell.renewalStatusBar.backgroundColor = UIColor.green
         }
         return whiteCell
     }
