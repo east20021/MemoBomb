@@ -71,7 +71,6 @@ class MainViewController: UIViewController {
     @objc func updateTimer() {
         setDateArray()
         NotificationCenter.default.post(name: .timer, object: nil)
-        self.memoTableView.reloadData()
     }
     
     func isDeleteMemo(memo: Memo ) -> Bool{
@@ -79,7 +78,6 @@ class MainViewController: UIViewController {
     }
     
     func setNotificationRealmDB() {
-        
         token = contentsList.observe { notification in
             
             if self.isContentsListEmpty() {
@@ -121,9 +119,6 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         let whiteCell = tableView.dequeueReusableCell(withIdentifier: "whiteCell", for: indexPath) as! WhiteTableViewCell
         whiteCell.contentsLabel.text = contentsList[indexPath.row].text
         whiteCell.dateLabel.text = memoManager.getDateString(memo: contentsList[indexPath.row])
-        
-        let date = timeManager.remainSeconds(memo: contentsList[indexPath.row])
-        whiteCell.progressWidth = whiteCell.progressWidth.changeMultiplier(changeMultiplier: self.setProgressBarValue(date: date ))
         
         switch contentsList[indexPath.row].renewalNum{
         case 0:
