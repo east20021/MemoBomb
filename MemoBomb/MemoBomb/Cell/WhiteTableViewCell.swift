@@ -13,6 +13,7 @@ class WhiteTableViewCell: UITableViewCell {
     @IBOutlet weak var progressWidth: NSLayoutConstraint!
     @IBOutlet weak var contentsLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var progressBar: UIView!
     
     
     override func awakeFromNib() {

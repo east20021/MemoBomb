@@ -124,7 +124,15 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         
         let date = timeManager.remainSeconds(memo: contentsList[indexPath.row])
         whiteCell.progressWidth = whiteCell.progressWidth.changeMultiplier(changeMultiplier: self.setProgressBarValue(date: date ))
-        print("a")
+        
+        switch contentsList[indexPath.row].renewalNum{
+        case 0:
+            whiteCell.progressBar.backgroundColor = UIColor.black
+        case 1:
+            whiteCell.progressBar.backgroundColor = UIColor.yellow
+        default:
+            whiteCell.progressBar.backgroundColor = UIColor.green
+        }
         return whiteCell
     }
 

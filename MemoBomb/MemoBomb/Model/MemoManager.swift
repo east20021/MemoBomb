@@ -34,17 +34,21 @@ class MemoManager {
     }
     
     //메모 업데이트
-    func updateText(id: String, text: String) {
-        let memo = realm.object(ofType: Memo.self, forPrimaryKey: id)
+    func updateText(memo: Memo, text: String) {
         try! realm.write {
-            memo?.text = text
+            memo.text = text
         }
     }
     
-    func updateDate(id: String, date: Date) {
-        let memo = realm.object(ofType: Memo.self, forPrimaryKey: id)
+    func updateDate(memo: Memo, date: Date) {
         try! realm.write {
-            memo?.date = date
+            memo.date = date
+        }
+    }
+    
+    func updateRenewalNum(memo: Memo, renewalNum: Int) {
+        try! realm.write {
+            memo.renewalNum = renewalNum
         }
     }
     

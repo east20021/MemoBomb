@@ -77,14 +77,16 @@ class EditViewController: UIViewController {
     }
     
     @IBAction func backButton(_ sender: Any) {
-        memoManager.updateText(id: id, text: contentsView.text)
+        memoManager.updateText(memo: memo, text: contentsView.text)
         contentsView.resignFirstResponder()
         dismiss(animated: true, completion: nil)
     }
     
     @IBAction func resetAction(_ sender: Any) {
+        let renewalNum = memo.renewalNum + 1
         resetButton.isHidden = true
-        memoManager.updateDate(id: id, date: Date())
+        memoManager.updateRenewalNum(memo: memo, renewalNum: renewalNum)
+        memoManager.updateDate(memo: memo, date: Date())
     }
 }
 
