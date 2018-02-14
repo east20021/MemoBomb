@@ -12,10 +12,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Memo View Controller-->
+        <!--New Memo View Controller-->
         <scene sceneID="1Cf-h8-Oqw">
             <objects>
-                <viewController storyboardIdentifier="newMemoVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="HcM-y8-fRn" customClass="MemoViewController" customModule="MemoBomb" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="newMemoVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="HcM-y8-fRn" customClass="NewMemoViewController" customModule="MemoBomb" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vSM-fr-anF">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

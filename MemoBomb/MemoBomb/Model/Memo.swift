@@ -20,8 +20,7 @@ class Memo: Object {
     @objc dynamic var date: Date = Date()
     @objc dynamic var time: Int = 0
     @objc dynamic var renewalNum: Int = 0
-    
-    
+
     override class func primaryKey() -> String? {
         return "id"
     }

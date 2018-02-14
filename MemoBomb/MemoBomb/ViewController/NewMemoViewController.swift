@@ -9,7 +9,7 @@
 import UIKit
 import RealmSwift
 
-class MemoViewController: UIViewController {
+class NewMemoViewController: UIViewController {
 
     @IBOutlet weak var contentsView: UITextView!
     

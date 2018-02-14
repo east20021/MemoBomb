@@ -32,9 +32,12 @@ class MainViewController: UIViewController {
         self.setTimer()
         self.setNotificationRealmDB()
         //realmDB 디렉토리 위치
-        setTableView()
-        
+        self.setTableViewSeparatorStyle()
         print(NSHomeDirectory())
+        
+        let refresh = UIRefreshControl()
+        refresh.addTarget(self, action: #selector(refreshAdd), for: UIControlEvents.valueChanged)
+        memoTableView.refreshControl = refresh
     }
     
     func setRealm() {
@@ -103,11 +106,17 @@ class MainViewController: UIViewController {
         let remainTime: CGFloat = CGFloat(date / totalTime)
         return remainTime
     }
+    @objc func refreshAdd() {
+        let newMemoStoryBoard = UIStoryboard(name: "NewMemo", bundle: nil)
+        let newMemoVC = newMemoStoryBoard.instantiateViewController(withIdentifier: "newMemoVC") as! NewMemoViewController
+        self.present(newMemoVC, animated: true, completion: nil)
+        self.memoTableView.refreshControl?.endRefreshing()
+    }
 }
 
 //테이블뷰
 extension MainViewController: UITableViewDelegate, UITableViewDataSource {
-    func setTableView() {
+    func setTableViewSeparatorStyle() {
         memoTableView.separatorStyle = UITableViewCellSeparatorStyle.none
     }
     
@@ -130,7 +139,6 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         }
         return whiteCell
     }
-
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 120
@@ -142,7 +150,6 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
-   
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         return UIView()

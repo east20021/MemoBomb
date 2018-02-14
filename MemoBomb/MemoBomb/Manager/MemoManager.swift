@@ -9,7 +9,6 @@
 import Foundation
 import RealmSwift
 
-
 class MemoManager {
 
     let realm = try! Realm()
