@@ -22,6 +22,9 @@
 		9B9ED6FC2029F33A00EC83AB /* ExpiredMemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9ED6FB2029F33A00EC83AB /* ExpiredMemo.swift */; };
 		9B9ED6FE2029F65600EC83AB /* ExpiredMemoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9ED6FD2029F65600EC83AB /* ExpiredMemoManager.swift */; };
 		9BA02A752019959B00359D55 /* TimeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA02A742019959B00359D55 /* TimeManager.swift */; };
+		9BEE5BA5204D7F31004F6C2D /* ExpiredMemoList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BEE5BA4204D7F31004F6C2D /* ExpiredMemoList.storyboard */; };
+		9BEE5BA7204D7F82004F6C2D /* ExpiredMemoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BEE5BA6204D7F82004F6C2D /* ExpiredMemoListViewController.swift */; };
+		9BEE5BA9204D8562004F6C2D /* ExpiredMemoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BEE5BA8204D8562004F6C2D /* ExpiredMemoTableViewCell.swift */; };
 		F618CE55F35EDE27444D7399 /* Pods_MemoBomb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9D22EC087F16912EB5E6B35 /* Pods_MemoBomb.framework */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +47,9 @@
 		9B9ED6FB2029F33A00EC83AB /* ExpiredMemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpiredMemo.swift; sourceTree = "<group>"; };
 		9B9ED6FD2029F65600EC83AB /* ExpiredMemoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpiredMemoManager.swift; sourceTree = "<group>"; };
 		9BA02A742019959B00359D55 /* TimeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeManager.swift; sourceTree = "<group>"; };
+		9BEE5BA4204D7F31004F6C2D /* ExpiredMemoList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ExpiredMemoList.storyboard; sourceTree = "<group>"; };
+		9BEE5BA6204D7F82004F6C2D /* ExpiredMemoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpiredMemoListViewController.swift; sourceTree = "<group>"; };
+		9BEE5BA8204D8562004F6C2D /* ExpiredMemoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpiredMemoTableViewCell.swift; sourceTree = "<group>"; };
 		CD5888EA56256B47C82DCF4B /* Pods-MemoBomb.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemoBomb.release.xcconfig"; path = "Pods/Target Support Files/Pods-MemoBomb/Pods-MemoBomb.release.xcconfig"; sourceTree = "<group>"; };
 		D9D22EC087F16912EB5E6B35 /* Pods_MemoBomb.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MemoBomb.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -125,6 +131,7 @@
 				9B50836C200FC11D00466450 /* MainViewController.swift */,
 				9B4AE615201205EB00E94BA6 /* NewMemoViewController.swift */,
 				9B4AE60F2011F19100E94BA6 /* EditViewController.swift */,
+				9BEE5BA6204D7F82004F6C2D /* ExpiredMemoListViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -136,6 +143,7 @@
 				9B4AE60C2011E77100E94BA6 /* NewMemo.storyboard */,
 				9B8CE9892016154600D62D72 /* EditMemo.storyboard */,
 				9B508373200FC11D00466450 /* LaunchScreen.storyboard */,
+				9BEE5BA4204D7F31004F6C2D /* ExpiredMemoList.storyboard */,
 			);
 			path = StroyBoard;
 			sourceTree = "<group>";
@@ -144,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				9B508380200FCB9600466450 /* WhiteTableViewCell.swift */,
+				9BEE5BA8204D8562004F6C2D /* ExpiredMemoTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -230,6 +239,7 @@
 			files = (
 				9B4AE60E2011E77100E94BA6 /* NewMemo.storyboard in Resources */,
 				9B508375200FC11D00466450 /* LaunchScreen.storyboard in Resources */,
+				9BEE5BA5204D7F31004F6C2D /* ExpiredMemoList.storyboard in Resources */,
 				9B8CE98A2016154600D62D72 /* EditMemo.storyboard in Resources */,
 				9B508372200FC11D00466450 /* Assets.xcassets in Resources */,
 				9B508370200FC11D00466450 /* Main.storyboard in Resources */,
@@ -309,6 +319,8 @@
 				9BA02A752019959B00359D55 /* TimeManager.swift in Sources */,
 				9B4AE6102011F19100E94BA6 /* EditViewController.swift in Sources */,
 				9B9ED6FC2029F33A00EC83AB /* ExpiredMemo.swift in Sources */,
+				9BEE5BA7204D7F82004F6C2D /* ExpiredMemoListViewController.swift in Sources */,
+				9BEE5BA9204D8562004F6C2D /* ExpiredMemoTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

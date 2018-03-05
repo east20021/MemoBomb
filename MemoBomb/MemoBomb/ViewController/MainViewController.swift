@@ -20,6 +20,7 @@ class MainViewController: UIViewController {
     
     private let memoManager = MemoManager()
     private let timeManager = TimeManager()
+    private let expiredMemoManager = ExpiredMemoManager()
     
     private var dateArray = [Double]()
     private var timer = Timer()
@@ -59,6 +60,7 @@ class MainViewController: UIViewController {
         var array = [Double]()
         for memo in contentsList {
             if isDeleteMemo(memo: memo) {
+                saveExpiredMemo(memo: memo)
                 memoManager.deleteMemo(memo: memo)
             } else {
                 array.append(timeManager.timeDiff(memo: memo))
@@ -108,6 +110,12 @@ class MainViewController: UIViewController {
         return remainTime
     }
     
+    func saveExpiredMemo(memo: Memo) {
+        let expiredMemo = ExpiredMemo()
+        expiredMemo.text = memo.text
+        expiredMemoManager.save(objs: expiredMemo)
+    }
+    
     @objc func endRefreshing(notfication : Notification) {
         self.memoTableView.refreshControl?.endRefreshing()
     }
@@ -130,19 +138,19 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let whiteCell = tableView.dequeueReusableCell(withIdentifier: "whiteCell", for: indexPath) as! WhiteTableViewCell
-        whiteCell.contentsLabel.text = contentsList[indexPath.row].text
-        whiteCell.dateLabel.text = memoManager.getDateString(memo: contentsList[indexPath.row])
+        let cell = tableView.dequeueReusableCell(withIdentifier: "whiteCell", for: indexPath) as! WhiteTableViewCell
+        cell.contentsLabel.text = contentsList[indexPath.row].text
+        cell.dateLabel.text = memoManager.getDateString(memo: contentsList[indexPath.row])
         
         switch contentsList[indexPath.row].renewalNum{
         case 0:
-            whiteCell.renewalStatusBar.backgroundColor = UIColor.black
+            cell.renewalStatusBar.backgroundColor = UIColor.black
         case 1:
-            whiteCell.renewalStatusBar.backgroundColor = UIColor.yellow
+            cell.renewalStatusBar.backgroundColor = UIColor.yellow
         default:
-            whiteCell.renewalStatusBar.backgroundColor = UIColor.green
+            cell.renewalStatusBar.backgroundColor = UIColor.green
         }
-        return whiteCell
+        return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -151,6 +159,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
+            saveExpiredMemo(memo: contentsList[indexPath.row])
             memoManager.deleteMemo(memo: contentsList[indexPath.row])
             tableView.deleteRows(at: [indexPath], with: .fade)
         }

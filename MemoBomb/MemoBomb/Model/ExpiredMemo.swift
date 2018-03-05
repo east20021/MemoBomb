@@ -12,12 +12,4 @@ import RealmSwift
 
 class ExpiredMemo: Object {
     @objc dynamic var text: String = ""
-    @objc dynamic var id = UUID().uuidString
-    @objc dynamic var date: Date = Date()
-    @objc dynamic var time: Int = 0
-    @objc dynamic var renewalNum: Int = 0
-    
-    override class func primaryKey() -> String? {
-        return "id"
-    }
 }

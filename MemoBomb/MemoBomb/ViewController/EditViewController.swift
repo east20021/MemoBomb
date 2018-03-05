@@ -15,6 +15,7 @@ class EditViewController: UIViewController {
     
     private let memoManager: MemoManager = MemoManager()
     private let timeManager: TimeManager = TimeManager()
+    private let expiredMemoManager = ExpiredMemoManager()
     //갱신가능시간
     private let renewableTime: Double = (6 * 60 * 60)
     
@@ -58,6 +59,7 @@ class EditViewController: UIViewController {
             resetButton.isHidden = false
         }
         if isDeleteMemo() {
+            saveExpiredMemo(memo: memo)
             memoManager.deleteMemo(memo: memo)
             dismiss(animated: true, completion: nil)
         } else {
@@ -76,6 +78,12 @@ class EditViewController: UIViewController {
     
     func isDeleteMemo() -> Bool {
         return remainSeconds < 1
+    }
+    
+    func saveExpiredMemo(memo: Memo) {
+        let expiredMemo = ExpiredMemo()
+        expiredMemo.text = memo.text
+        expiredMemoManager.save(objs: expiredMemo)
     }
     
     @IBAction func backButton(_ sender: Any) {
