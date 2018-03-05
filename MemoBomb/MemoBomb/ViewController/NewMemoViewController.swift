@@ -27,6 +27,7 @@ class NewMemoViewController: UIViewController {
     }
     
     @IBAction func doneButton(_ sender: Any) {
+        NotificationCenter.default.post(name: .editDone, object: nil)
         if contentsView.text.count != 0 {
           addMemo()
         }

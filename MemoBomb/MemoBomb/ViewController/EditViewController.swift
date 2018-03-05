@@ -21,13 +21,15 @@ class EditViewController: UIViewController {
     private var remainSeconds: Double = 0.0
     private var memo: Memo = Memo()
     
+
+    
     //tableView에서 EditVC로 넘어올 때 받는 id값
     var id = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setUI()
-        self.setObservTimer()
+        self.setObserveTimer()
         
     }
     
@@ -47,11 +49,11 @@ class EditViewController: UIViewController {
         }
     }
     
-    func setObservTimer() {
+    func setObserveTimer() {
         NotificationCenter.default.addObserver(self, selector: #selector(setTimer(notfication:)), name: .timer, object: nil)
     }
     
-    @objc func setTimer(notfication : NSNotification) {
+    @objc func setTimer(notfication : Notification) {
         if isResetPossible() {
             resetButton.isHidden = false
         }

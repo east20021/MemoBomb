@@ -38,6 +38,7 @@ class MainViewController: UIViewController {
         let refresh = UIRefreshControl()
         refresh.addTarget(self, action: #selector(refreshAdd), for: UIControlEvents.valueChanged)
         memoTableView.refreshControl = refresh
+        NotificationCenter.default.addObserver(self, selector: #selector(endRefreshing(notfication:)), name: .editDone, object: nil)
     }
     
     func setRealm() {
@@ -106,11 +107,15 @@ class MainViewController: UIViewController {
         let remainTime: CGFloat = CGFloat(date / totalTime)
         return remainTime
     }
+    
+    @objc func endRefreshing(notfication : Notification) {
+        self.memoTableView.refreshControl?.endRefreshing()
+    }
+    
     @objc func refreshAdd() {
         let newMemoStoryBoard = UIStoryboard(name: "NewMemo", bundle: nil)
         let newMemoVC = newMemoStoryBoard.instantiateViewController(withIdentifier: "newMemoVC") as! NewMemoViewController
         self.present(newMemoVC, animated: true, completion: nil)
-        self.memoTableView.refreshControl?.endRefreshing()
     }
 }
 
@@ -162,3 +167,8 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
 }
+
+extension Notification.Name {
+    static let editDone = Notification.Name("editDone")
+}
+
